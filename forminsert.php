@@ -9,10 +9,10 @@ ID Pelajar <input type="text"
     name="IDPelajar"
     class="form-control">
 Nama Pelajar <input type="text"
-    name="NamaPelajar"
+    name="NamaPel"
     class="form-control">
 Alamat <input type="text"
-    name="alamat"
+    name="Alamat"
     class="form-control"><br>
 Namapengguna pelajar <input type="text"
     name="namapengguna"
@@ -25,6 +25,7 @@ Katalaluan <input type="password"
 </button><br>
 
 </form>
+
 <?php
 //semak isset
 if(isset($_POST['IDPelajar']) && 
@@ -50,7 +51,7 @@ if(isset($_POST['IDPelajar']) &&
         $sqlpengguna = "INSERT INTO pengguna
             (namapengguna, katalaluan, userlevel, 
             namapenuh, IDPelajar)
-            VALUES('$namapengguna','$katalaluan',
+            VALUES('$namapengguna',md5('$katalaluan'),
             '$userlevel','$namapenuh','$IDPelajar')";
         $rspengguna=mysqli_query($db, $sqlpengguna);
 
