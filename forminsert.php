@@ -4,7 +4,7 @@
 ?>
 <!-- forminsert.php -->
 <h3>Masuk rekod pelajar baru</h3>
-<form method="POST">
+<form method="POST" action="">
 ID Pelajar <input type="text" 
     name="IDPelajar"
     class="form-control">
