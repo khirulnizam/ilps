@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2018 at 04:46 AM
+-- Generation Time: Feb 12, 2019 at 07:41 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bengkelphp`
 --
-CREATE DATABASE IF NOT EXISTS `bengkelphp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bengkelphp`;
 
 -- --------------------------------------------------------
 
@@ -47,7 +45,10 @@ INSERT INTO `pelajar` (`IDPelajar`, `NamaPel`, `Alamat`) VALUES
 (4, 'Ali Abu', 'Politeknik Shah Alam'),
 (10, 'kerul', 'abc'),
 (11, 'kerul', 'abc'),
-(12, 'Ahmad bin Ali', 'Puchong Selangor');
+(12, 'Ahmad bin Ali', 'Puchong Selangor'),
+(13, '$NamaPel', '$Alamat'),
+(100, 'Arif Ahmad', ''),
+(101, 'Anif Ali', 'Selandar');
 
 -- --------------------------------------------------------
 
@@ -59,17 +60,18 @@ CREATE TABLE `pengguna` (
   `id` int(11) NOT NULL,
   `namapengguna` varchar(20) NOT NULL,
   `katalaluan` varchar(255) NOT NULL,
-  `namapenuh` varchar(100) NOT NULL
+  `namapenuh` varchar(100) NOT NULL,
+  `IDPelajar` int(11) NOT NULL,
+  `userlevel` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`id`, `namapengguna`, `katalaluan`, `namapenuh`) VALUES
-(3, 'abc', 'abc', 'abc'),
-(2, 'ali', '984d8144fa08bfc637d2825463e184fa', 'Ali Ahmad'),
-(1, 'kerul', 'e99a18c428cb38d5f260853678922e03', 'Khirulnizam Abd Rahman');
+INSERT INTO `pengguna` (`id`, `namapengguna`, `katalaluan`, `namapenuh`, `IDPelajar`, `userlevel`) VALUES
+(0, 'anif', 'e10adc3949ba59abbe56e057f20f883e', '', 101, 'pelajar'),
+(17, 'ilp', '27e335e8abda02af7b2d55f77a771469', 'ILP Selandar', 0, 'admin');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +97,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `pelajar`
 --
 ALTER TABLE `pelajar`
-  MODIFY `IDPelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `IDPelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

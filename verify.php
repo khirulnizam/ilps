@@ -33,8 +33,7 @@ if(mysqli_num_rows($rs)==1){
         header ("Location: infopelajar.php");
     }//end userlevel
 }else{//not match
-    header ("Location: login.php?error=Nama pengguna 
-    dan katalaluan takpadan");
+    header ("Location: login.php?msg=Nama pengguna dan katalaluan takpadan");
     //echo "Tiada pengguna dijumpai";
 }
 ?>
